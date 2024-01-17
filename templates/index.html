@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul class="list-articles">
+    {% for p in posts %}
+        			<li><div class="article-panel">
+	<p class="first">Category: {{p.cat}}</p>
+	<p class="last">Date: {{p.time_update|date:"d-m-Y"}}</p>
+</div>
+
+{% if p.photo %}
+    <img class="img-article-left thumb" src="{{p.photo.url}}" alt="">
+{% endif %}
+<div class="article-text">
+    <h2>{{p.title}}</h2>
+{#    <p class="model">{{p.model|linebreaks|truncatewords:20}}</p>#}
+    <p class="content">{{p.content|linebreaks|truncatewords:50}}</p>
+</div>
+<div class="clear"></div>
+<p class="link-read-post"><a href="{{ p.get_absolute_url }}">View Post</a></p>
+                    </li>
+
+    {% endfor %}
+</ul>
+{% endblock %}

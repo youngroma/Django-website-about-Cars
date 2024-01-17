@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="post-title">{{post.brand}}</h1>
+<h2 class="post-model">{{post.model}}</h2>
+<div class="container">
+    <p class="characteristics">Version: {{post.version}}</p>
+    <p class="characteristics">Acceleration 0-100 km/h: {{post.acceleration}}</p>
+    <p class="characteristics">Power: {{post.power}}</p>
+    <p class="characteristics">Drive: {{post.drive}}</p>
+
+</div>
+    <p class="characteristics1">Created: {{post.time_create}}</p>
+{% if post.photo %}
+<p><img class="img-article-left" src="{{post.photo.url}}"></p>
+{% endif %}
+
+{{post.content|linebreaks}}
+{% endblock %}

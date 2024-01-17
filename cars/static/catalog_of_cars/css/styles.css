@@ -1,0 +1,646 @@
+html, body {
+	font-family: 'Arial';
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	color: #444;
+}
+
+a {
+	color: #0059b2;
+	text-decoration: none;
+}
+a:hover {
+	color: #CC0000;
+	text-decoration: underline;
+}
+
+/* Заголовок первого уровня (h1) */
+.post-title {
+    font-size: 36px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+    text-align: center; /* Выравнивание по центру */
+    margin-bottom: 10px; /* Отступ снизу */
+    letter-spacing: 1px; /* Расстояние между буквами */
+}
+
+/* Заголовок второго уровня (h2) */
+.post-model {
+    font-size: 24px; /* Размер шрифта */
+    color: #666; /* Цвет текста */
+    text-align: center; /* Выравнивание по центру */
+    font-style: italic; /* Курсивный стиль */
+}
+
+/* Общие стили для обоих заголовков */
+.post-title, .post-model {
+    margin-top: 0; /* Убираем верхний отступ */
+}
+
+/* Добавим немного стилей для подчеркивания заголовков */
+.post-title::after, .post-model::after {
+    content: ""; /* Создаем псевдоэлемент для подчеркивания */
+    display: block;
+    width: 50px; /* Ширина подчеркивания */
+    height: 2px; /* Высота подчеркивания */
+    background-color: #cc0000; /* Цвет подчеркивания */
+    margin: 8px auto; /* Отступы сверху и снизу, автоматическое выравнивание по центру */
+}
+
+
+
+
+
+img {max-width: 600px; height: auto;}
+
+img.img-article-left {
+	max-width: 500px;
+	height: auto;
+	float: left;
+	padding: 0 10px 10px 0;
+}
+
+img.img-article-left.thumb {
+	max-width: 550px;
+	height: auto;
+}
+
+
+
+
+p.characteristics1 {
+    display: inline-block;
+    float: right;
+    padding: 8px;  /* Увеличенный отступ внутри блока */
+    margin-bottom: 15px;  /* Увеличенный отступ снизу */
+    background-color: darkgray;  /* Цвет фона */
+    color: whitesmoke;  /* Цвет текста */
+    font-family: Arial, sans-serif;  /* Шрифт текста */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+	padding-bottom: 20px;
+	/*margin-bottom: 20px;*/
+}
+
+.characteristics {
+    position: relative;
+    flex: 1;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+
+}
+
+.characteristics::after {
+    content: '';
+    position: absolute;
+    width: 150%;  /* Измените это значение по вашему усмотрению для регулировки длины линии */
+    height: 1px;
+    background-color: #ccc;
+    bottom: 0;
+    left: 0%; /* Сдвигаем линию влево на 50% от ширины элемента */
+}
+
+
+
+.characteristics:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+
+
+/* Сбрасываем обтекание после каждого второго элемента */
+p.characteristics2,
+p.characteristics4 {
+    clear: right;
+}
+
+
+p.link-read-post {
+	text-align: right;
+}
+p.link-read-post a {
+	padding: 10px;
+	min-width: 100px;
+	background: #333671;
+	color: #fff;
+	text-decoration: none;
+}
+
+div.article-panel {
+    background: floralwhite;
+    padding: 5px 10px 5px 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #555;
+}
+div.article-panel p.first {
+    margin: 0;
+    float: left;
+}
+div.article-panel p.last {
+    margin: 0;
+    float: right;
+}
+
+ul.list-articles {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.list-articles li {
+	border-bottom: 1px solid #ccc;
+}
+/* Стили для отдельной статьи */
+.list-articles li {
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* Граница между статьями (по желанию) */
+    padding: 10px;
+}
+
+/* Стили для панели статьи */
+.article-panel {
+    position: relative;
+}
+
+.table-page {
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+}
+.table-page tr {height: 100%;}
+
+.clear {clear: both;}
+
+.header {
+	background: darkred;
+	height: 60px;
+}
+
+.logo {
+	background: url('../images/logo.png') no-repeat 10px 5px;
+	width: 70px;
+	height: 60px;
+}
+
+ul.mainmenu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 60px;
+	color: darkred;
+	font-size: 20px;
+	overflow: hidden;
+}
+ul.mainmenu li {
+	float: left;
+	margin: 18px 40px 0 30px;
+}
+ul.mainmenu li.logo {margin: 0;}
+ul.mainmenu li.last {float: right;}
+
+ul.mainmenu li a {
+	color: white;
+	text-decoration: none;
+}
+ul.mainmenu li a:hover {
+	color: floralwhite;
+}
+
+.panelitems {
+	text-align: center;
+}
+
+ul.langitem {
+	list-style: none;
+	display: inline-block;
+	margin: 30px;
+	padding: 0;
+	max-width: 300px
+}
+ul.langitem li {
+	margin: 10px 0 0 0;
+	width: 100%;
+}
+ul.langitem li.image {
+	margin: 0;
+	text-align: center;
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+}
+ul.langitem li.descr {
+	color: #777;
+	height: 170px;
+	overflow: hidden;
+}
+ul.langitem li a {
+	color: darkred;
+	text-decoration: none;
+	font-size: 20px;
+}
+ul.langitem li a:hover {
+	color: darkred;
+}
+div.button {
+	background: darkred;
+	max-width: 200px;
+	margin: 0 auto;
+	padding: 5px 20px 5px 20px;
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+.table-content {
+	width: 100%;
+	min-height: 100%;
+	height: 100%;
+}
+
+.left-chapters {
+	margin: 0;
+	background: floralwhite;
+	border-right: 1px solid #ccc;
+	min-height: 100%;
+}
+.left-chapters ul {
+	width: 230px;
+	min-height: 100%;
+	margin: 0;
+	padding: 20px 10px 10px 20px;
+	list-style: none;
+	font-size: 20px;
+}
+.left-chapters ul li {
+	margin: 30px 0 0 0;
+	color: #999;
+}
+.left-chapters ul li.selected {color: #0059b2; }
+.left-chapters ul li a {
+	color: darkred;
+	text-decoration: none;
+}
+.left-chapters ul li a:hover { color: #CC0000; }
+.left-chapters ul li.share {margin: 60px 0 0 0;}
+.left-chapters ul li.share p {margin: 30px 0 30px 0;}
+.left-chapters ul li.share a {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	margin: 0 20px 0 0;
+}
+.left-chapters ul li.share a.share-yt {
+	width: 100%;
+	height: 30px;
+	background: url('../images/share_yt.png') no-repeat 0 0
+}
+.left-chapters ul li.share a.share-yt:hover {
+	width: 100%;
+	height: 30px;
+	background: url('../images/share_yt.png') no-repeat 0 -30px
+}
+
+.content {
+	padding: 40px 20px 20px 40px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+ul.breadcrumbs {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 20px;
+	font-family: Sans-serif, Arial, Tahoma;
+}
+ul.breadcrumbs li {
+	display: inline-block;
+}
+ul.breadcrumbs li a {
+	color: #0059b2;
+	text-decoration: none;
+}
+ul.breadcrumbs li a:hover { color: #CC0000; }
+ul.breadcrumbs li:after{
+	padding: 0 10px 0 10px;
+	content: "\2192";
+}
+ul.breadcrumbs li.last:after {content: "";}
+
+ul.control {
+	margin: 0;
+	padding: 60px 0 0 0;
+	list-style: none;
+	font-family: Sans-serif, Arial, Tahoma;
+	font-size: 18px;
+	width: 100%;
+}
+ul.control li {	float: left; padding: 0 0 0 10px;}
+ul.control li.first:before {content: "\2190"; padding: 0 10px 0 0;}
+ul.control li.last {float: right; padding: 0 40px 0 0;}
+ul.control li.last:after {content: "\2192"; padding: 0 0 0 10px;}
+ul.control li a { color: #0059b2; text-decoration: none; }
+ul.control li a:hover { color: #CC0000; }
+
+ul.content-table {
+	margin: 0;
+	padding: 60px 0 0 30px;
+	list-style: none;
+	font-family: Sans-serif, Arial, Tahoma;
+	font-size: 28px;
+}
+ul.content-table li {
+	margin: 0 0 40px 0;
+}
+ul.content-table li a {
+	color: darkred;
+	text-decoration: none;
+}
+ul.content-table li a:hover {color: darkred;}
+
+.content-text {
+	margin: 60px 0 0 30px;
+	color: #000;
+	font-size: 20px;
+	font-family: Yandex Sans Display Light;
+}
+.content-text h1 {font-size: 32px;}
+
+ul.lang-list {
+	list-style: none;
+	margin: 0;
+	padding: 14px 0 0 0;
+	background: #3F4137;
+	width: 100%;
+	height: 50px;
+	border-top: 1px solid #959A82;
+	box-sizing: border-box;
+	font-size: 18px;
+	font-family: Sans-serif, Arial, Tahoma;
+}
+ul.lang-list li {
+	display: inline-block;
+	margin-left: 40px;
+}
+ul.lang-list li.selected {color: #fdc073; border-bottom: 1px solid #fdc073;}
+ul.lang-list li a {
+	color: #eee;
+	text-decoration: none;
+}
+ul.lang-list li a:hover {color: darkred;}
+
+.topic-subject .topic-line {
+	border-bottom: 1px solid #CC0000;
+	margin-top: -16px;
+}
+
+.topic-subject .topic-text {
+	display: inline-block;
+	font-size: 28px;
+	color: #777;
+	padding: 0 10px 0 10px;
+	margin-left: 30px;
+	background: #fff;
+	font-family: Sans-serif, Arial, Tahoma;
+}
+
+.list-topic {
+	margin: 40px 0 60px 0;
+	font-family: Sans-serif, Arial, Tahoma;
+}
+.list-topic p {
+	margin: 0;
+	font-size: 28px;
+}
+.list-topic ol {
+	columns: 2;
+	-webkit-columns: 2;
+	column-gap: 40px;
+}
+.list-topic ol li {
+	display: list-item;
+	margin: 10px 10px 0 0px;
+	padding: 0 0 0 10px;
+}
+.list-topic ol li a {
+	color: #0059b2;
+	text-decoration: none;
+}
+.list-topic ol li a:hover {color: #CC0000;}
+
+.highlight {
+	max-width: 350px;
+	padding: 0 10px 0 10px;
+	margin: 0;
+	overflow: auto;
+	overflow-y: hidden;
+	background: #f0f0f0;
+}
+.highlight p { margin: 0; }
+.highlight .block {
+	width: 100%;
+	margin: 0;
+}
+.highlight .block p { margin: 0; }
+
+.quote {
+	background: url('../images/blockquote.png') no-repeat 0 10px;
+	padding: 5px 5px 5px 70px;
+	font-family: Sans-serif, Arial, Tahoma;
+	font-style: italic;
+}
+
+#footer {
+	box-sizing: border-box;
+
+	background: darkred;
+	padding: 5px;
+	color: #aaa;
+	font-size: 14px;
+	font-family: Verdana, Geneva, Arial, Helvetica;
+	text-align: left;
+	overflow: hidden;
+}
+#footer a {
+	text-decoration: underline;
+	color: #aaa;
+}
+
+.form-input {
+    width: 300px;
+    font-size: 16px;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+}
+
+.form-error ul {
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+}
+
+.form-button {
+    min-width: 200px;
+    font-size: 16px;
+}
+
+.list-pages {
+	text-align: center;
+	margin: 0 0 20px 0;
+}
+.list-pages ul {
+	margin: 20px 0 0 0;
+	padding: 0;
+	list-style: none;
+}
+.list-pages ul li {
+	display: inline-block;
+	margin: 0 20px 0 0;
+}
+.list-pages a {
+	color: #000;
+	font-size: 24px;
+	text-decoration: none;
+}
+.list-pages .page-num, .page-num-selected {
+	display: inline-block;
+	width: 60px;
+	height: 44px;
+	padding: 16px 0 0 0;
+	border: 1px solid #d0d0d0;
+	border-radius: 30px;
+}
+.list-pages .page-num:hover {
+	box-shadow: 3px 3px 1px #d0d0d0;
+}
+.list-pages .page-num-selected {
+	border: none;
+	color: #000;
+	font-size: 20px;
+}
+.list-pages .page-num-selected:hover {
+	box-shadow: none;
+}
+
+.article-panel p {
+    margin: 0;
+}
+
+.img-article-left {
+    float: left;
+    margin-right: 10px;
+    width: 100%; /* Ширина может быть настроена по вашему выбору */
+    height: auto; /* Автоматическое изменение высоты для сохранения пропорций */
+    position: relative; /* Поддерживает позиционирование дочерних элементов относительно этого */
+    z-index: 1; /* Установка более высокого z-index для изображения */
+}
+
+/* Стили для блока статей */
+.list-articles li {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+/* Изображение статьи */
+.list-articles li img {
+    max-width: 500px;
+    height: auto;
+    float: left;
+    margin-right: 10px;
+}
+
+/* Блок для текста (model и brand) */
+.list-articles li .article-text {
+    overflow: hidden; /* Чтобы избежать перекрытия с изображением */
+}
+
+/* Заголовок (brand) */
+.list-articles li h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Модель (model) */
+.list-articles li p.model {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Кнопка "View Post" */
+.list-articles li .link-read-post {
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+	z-index: 1;
+}
+
+/* Очистка плавания */
+.clear {
+    clear: both;
+}
+
+/* Стили для отдельной статьи */
+.list-articles li {
+    margin-bottom: 30px;
+    border: 1px solid #ccc; /* Изменен цвет границы для более мягкого вида */
+    border-radius: 10px; /* Добавлен скругленный угол */
+    overflow: hidden; /* Избегаем переполнения содержимого за границы */
+    transition: box-shadow 0.3s ease; /* Плавное изменение тени при наведении */
+}
+
+.list-articles li:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень при наведении */
+}
+
+.list-articles li img {
+    max-width: 100%; /* Автоматическое масштабирование изображения */
+    height: auto;
+    border-radius: 0 0 0 0; /* Скругленные верхние углы изображения */
+}
+
+.list-articles li .article-panel {
+    padding: 20px; /* Увеличен внутренний отступ */
+}
+
+.list-articles li h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.list-articles li p.model {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.list-articles li .link-read-post {
+    margin-top: 15px;
+}
+
+.list-articles li .link-read-post a {
+
+    padding: 10px 20px;
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+}
+
+.list-articles li .link-read-post a:hover {
+    background-color: darkred; /* Цвет фона кнопки при наведении */
+}
